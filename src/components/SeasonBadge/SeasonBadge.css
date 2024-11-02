@@ -1,0 +1,26 @@
+.seasonbadge {
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: 60px;
+    max-width: 80px;
+    padding: .5em .75em;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.seasonbadge.FALL {
+    background-color: #f2d4b2;
+}
+
+.seasonbadge.WINTER {
+    background-color: #b2cbf2;
+}
+
+.seasonbadge.SPRING {
+    background-color: #fdc4db;
+}
+
+.seasonbadge.SUMMER {
+    background-color: #f2edb2;
+}

@@ -1,0 +1,28 @@
+.coursecard {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    padding: 1em;
+    border-radius: 8px;
+    border: 1px lightgray solid;
+}
+
+.coursecard--selected {
+    box-shadow: 0px 0px 8px rgba(0, 0, 255, 0.75);
+}
+
+.coursecard__header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.coursecard__body {
+    padding: 1em 0em;
+}
+
+.coursecard__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.4em;
+}
