@@ -1,10 +1,11 @@
 .coursecard {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
     padding: 1em;
     border-radius: 8px;
     border: 1px lightgray solid;
+    background-color: white;
+    cursor: pointer;
 }
 
 .coursecard--selected {

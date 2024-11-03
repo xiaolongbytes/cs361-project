@@ -90,6 +90,7 @@ export const ALL_OFFERED_COURSES: Course[] = [
         prerequisiteCourseIDs: [],
         offeredIn: [Season.FALL, Season.WINTER, Season.SPRING, Season.SUMMER],
     },
+    // TODO: CHECK PREREQS FOR CS261, THIS DOESN'T SEEM RIGHT
     {
         id: COURSE_IDS.CS261,
         isRequired: true,

@@ -8,6 +8,9 @@ type CourseCardProps = {
     isSelected: boolean;
     course: Course;
     allOfferedCourses: Course[];
+    /**
+     * Callback for when a course is selected
+     */
     onCourseSelect: (course: Course) => void;
     quartersToCourses: Record<UUID, UUID[]>;
 };
@@ -17,9 +20,12 @@ export const CourseCard: FunctionComponent<CourseCardProps> = ({
     course,
     allOfferedCourses,
     quartersToCourses,
+    onCourseSelect,
 }) => {
     return (
-        <div className={`coursecard ${isSelected ? 'coursecard--selected' : ''}`}>
+        <div
+            onClick={() => onCourseSelect(course)}
+            className={`coursecard ${isSelected ? 'coursecard--selected' : ''}`}>
             <div className="coursecard__header">
                 <p>
                     {course.courseCode} - {course.fullName}

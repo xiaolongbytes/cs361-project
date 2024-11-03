@@ -9,18 +9,18 @@
     border-radius: 4px;
 }
 
-.seasonbadge.FALL {
+.seasonbadge.seasonbadge--fall {
     background-color: #f2d4b2;
 }
 
-.seasonbadge.WINTER {
+.seasonbadge.seasonbadge--winter {
     background-color: #b2cbf2;
 }
 
-.seasonbadge.SPRING {
+.seasonbadge.seasonbadge--spring {
     background-color: #fdc4db;
 }
 
-.seasonbadge.SUMMER {
+.seasonbadge.seasonbadge--summer {
     background-color: #f2edb2;
 }

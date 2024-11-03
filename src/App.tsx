@@ -1,71 +1,86 @@
 import React from 'react';
-import { SeasonBadge } from './components/SeasonBadge/SeasonBadge';
 import { v4 } from 'uuid';
-import { ALL_OFFERED_COURSES, Season, COURSE_IDS, UUID, Quarter, Course } from './common/constants';
-import { PrerequisiteBadge } from './components/PrerequisiteBadge/PrerequisiteBadge';
-import { NoPrerequisiteBadge } from './components/PrerequisiteBadge/NoPrerequisitesBadge';
-import { PrerequisitesList } from './components/PrerequisitesList/PrerequisitesList';
-import { CourseCard } from './components/CourseCard/CourseCard';
+import { ALL_OFFERED_COURSES, Season, COURSE_IDS, UUID, Quarter } from './common/constants';
 import './common/reset.css';
+import './common/variables.css';
 import './App.css';
+import { CourseCatalog } from './components/CourseCatalog/CourseCatalog';
+import { DegreePlan } from './components/DegreePlan/DegreePlan';
 
-const exampleQuarter: Quarter = {
+const fall2024: Quarter = {
     id: v4(),
     season: Season.FALL,
     year: 2024,
 };
+const winter2024: Quarter = {
+    id: v4(),
+    season: Season.WINTER,
+    year: 2024,
+};
+const spring2025: Quarter = {
+    id: v4(),
+    season: Season.SPRING,
+    year: 2025,
+};
+const summer2025: Quarter = {
+    id: v4(),
+    season: Season.SPRING,
+    year: 2025,
+};
+
+const exampleQuarters = [fall2024, winter2024, spring2025, summer2025];
 
 const exampleQuartersToCourses: Record<UUID, UUID[]> = {
-    [exampleQuarter.id]: [COURSE_IDS.CS161],
+    [fall2024.id]: [COURSE_IDS.CS161],
+    [winter2024.id]: [COURSE_IDS.CS162],
+    [spring2025.id]: [COURSE_IDS.CS225],
+    [summer2025.id]: [COURSE_IDS.CS261],
 };
 
-const exampleCourse: Course = {
-    id: COURSE_IDS.CS325,
-    isRequired: true,
-    fullName: 'Analysis of Algorithms',
-    courseCode: 'CS325',
-    prerequisiteCourseIDs: [COURSE_IDS.CS225, COURSE_IDS.CS261],
-    offeredIn: [Season.FALL, Season.WINTER, Season.SPRING, Season.SUMMER],
-};
+// const exampleCourse: Course = {
+//     id: COURSE_IDS.CS325,
+//     isRequired: true,
+//     fullName: 'Analysis of Algorithms',
+//     courseCode: 'CS325',
+//     prerequisiteCourseIDs: [COURSE_IDS.CS225, COURSE_IDS.CS261],
+//     offeredIn: [Season.FALL, Season.WINTER, Season.SPRING, Season.SUMMER],
+// };
 
-function App() {
+const App = () => {
     return (
         <div className="App">
-            <SeasonBadge season={Season.FALL} />
-            <SeasonBadge season={Season.WINTER} />
-            <SeasonBadge season={Season.SPRING} />
-            <SeasonBadge season={Season.SUMMER} />
-            <br />
-            <PrerequisiteBadge courseName="CS161" isFulfilled={true} />
-            <PrerequisiteBadge courseName="CS161" isFulfilled={false} />
-            <NoPrerequisiteBadge />
-            <br />
-            <PrerequisitesList
-                allOfferedCourses={ALL_OFFERED_COURSES}
-                prerequisiteCourseIDs={[]}
-                quartersToCourses={exampleQuartersToCourses}
-            />
-            <PrerequisitesList
-                allOfferedCourses={ALL_OFFERED_COURSES}
-                prerequisiteCourseIDs={[COURSE_IDS.CS162]}
-                quartersToCourses={exampleQuartersToCourses}
-            />
-            <CourseCard
-                isSelected={false}
-                course={exampleCourse}
-                allOfferedCourses={ALL_OFFERED_COURSES}
-                onCourseSelect={_ => {}}
-                quartersToCourses={exampleQuartersToCourses}
-            />
-            <CourseCard
-                isSelected
-                course={exampleCourse}
-                allOfferedCourses={ALL_OFFERED_COURSES}
-                onCourseSelect={_ => {}}
-                quartersToCourses={exampleQuartersToCourses}
-            />
+            <div className="App__header">{/* TODO */}</div>
+            <div className="App__coursecatalog">
+                <CourseCatalog
+                    allOfferedCourses={ALL_OFFERED_COURSES}
+                    selectedCourse={null}
+                    courses={ALL_OFFERED_COURSES}
+                    onCourseSelect={_ => {}}
+                    quartersToCourses={exampleQuartersToCourses}
+                />
+            </div>
+            <div className="App__form">
+                <div style={{ height: '500px', width: '100%', backgroundColor: '#eee' }} />
+                {/* TODO */}
+            </div>
+            <div className="App__quartercatalog">
+                {/* <QuarterCard
+                    quarter={fall2024}
+                    quartersToCourses={exampleQuartersToCourses}
+                    allOfferedCourses={ALL_OFFERED_COURSES}
+                    onCourseSelect={_ => {}}
+                    selectedCourse={null}
+                /> */}
+                <DegreePlan
+                    quarters={exampleQuarters}
+                    allOfferedCourses={ALL_OFFERED_COURSES}
+                    quartersToCourses={exampleQuartersToCourses}
+                    selectedCourse={null}
+                    onCourseSelect={_ => {}}
+                />
+            </div>
         </div>
     );
-}
+};
 
 export default App;

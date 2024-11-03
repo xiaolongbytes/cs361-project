@@ -1,3 +1,41 @@
 h1, h2, h3, h4, h5, h6, p, span, a {
   font-family: sans-serif
 }
+
+.App {
+  padding: 1em;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  gap: 0 1em;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header header"
+    "coursecatalog form quartercatalog";
+}
+
+@media screen and (max-width: 1000px) {
+  .App {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+      "header header"
+      "form form"
+      "coursecatalog quartercatalog";
+  }
+}
+.App__header {
+  grid-area: header;
+}
+
+.App__coursecatalog {
+  grid-area: coursecatalog;
+}
+
+.App__form {
+  grid-area: form;
+}
+
+.App__quartercatalog {
+  grid-area: quartercatalog;
+}

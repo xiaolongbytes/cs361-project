@@ -1,3 +1,14 @@
+# Problem
+TODO:
+
+# Figma
+TODO:
+
+# Lessons Learned:
+- BEM naming convention for class names
+    - block__element--modifier
+- The Typescript + React FunctionComponent pattern for defining component function signature
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

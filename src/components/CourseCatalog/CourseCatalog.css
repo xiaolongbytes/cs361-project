@@ -1,0 +1,26 @@
+.coursecatalog__header {
+    font-size: larger;
+    font-weight: bold;
+    padding: 0.5em 0em;
+}
+
+.coursecatalog {
+  /* max-width: 500px; */
+}
+
+.coursecatalog__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 0.5em 1em;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+}
+
+.coursecatalog__body .coursecard {
+    align-self: stretch;
+}
