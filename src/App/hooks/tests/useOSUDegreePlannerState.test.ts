@@ -300,7 +300,12 @@ describe('useOSUDegreePlannerState', () => {
     });
 
     describe('onDegreeReset', () => {
-        it('should clear the degree plan', async () => {
+        let spy: jest.SpyInstance;
+        beforeEach(() => {
+            spy = jest.spyOn(window, 'confirm');
+        });
+        it('should clear the degree plan if the user confirms', async () => {
+            spy.mockReturnValue(true);
             const { result } = renderHook(useOSUDegreePlannerState, {
                 initialProps: {
                     apiClient: mockClient,
@@ -322,6 +327,30 @@ describe('useOSUDegreePlannerState', () => {
                 result.current.onDegreeReset();
             });
             await waitFor(() => expect(result.current.degreePlan).toStrictEqual({}));
+        });
+        it('should not clear the degree plan if the user does not confirm', async () => {
+            spy.mockReturnValue(false);
+            const { result } = renderHook(useOSUDegreePlannerState, {
+                initialProps: {
+                    apiClient: mockClient,
+                },
+            });
+
+            act(() => {
+                result.current.onCourseSelect(course, CourseSelectSource.COURSE_CATALOG);
+                result.current.onQuarterSelect(quarter);
+            });
+
+            act(() => {
+                result.current.onCourseAdd();
+            });
+
+            await waitFor(() => expect(result.current.degreePlan[quarter.id]).toContain(course.id));
+
+            act(() => {
+                result.current.onDegreeReset();
+            });
+            await waitFor(() => expect(result.current.degreePlan[quarter.id]).toContain(course.id));
         });
     });
 

@@ -72,7 +72,12 @@ export const useOSUDegreePlannerState = ({ apiClient }: { apiClient: OSUDegreePl
     }, [selectedCourseFromQuarter, degreePlan]);
 
     const onDegreeReset = useCallback(() => {
-        setDegreePlan({});
+        const isConfirmed = window.confirm(
+            'Resetting your degree plan is irreversible. Are you sure you want to start from scratch?'
+        );
+        if (isConfirmed) {
+            setDegreePlan({});
+        }
     }, []);
 
     const onQuarterSelect: QuarterSelectorCallback = useCallback((quarter: Quarter) => {

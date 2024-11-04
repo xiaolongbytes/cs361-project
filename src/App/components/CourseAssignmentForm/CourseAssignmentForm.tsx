@@ -76,15 +76,7 @@ export const CourseAssignmentForm: FunctionComponent<CourseAssignmentFormProps> 
                 </ol>
             </details>
 
-            <button
-                onClick={() => {
-                    const isConfirmed = window.confirm(
-                        'Resetting your degree plan is irreversible. Are you sure you want to start from scratch?'
-                    );
-                    if (isConfirmed) {
-                        onDegreeReset();
-                    }
-                }}>
+            <button type="button" onClick={onDegreeReset}>
                 RESET DEGREE PLAN
             </button>
         </form>
