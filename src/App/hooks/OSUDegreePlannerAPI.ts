@@ -32,7 +32,7 @@ export class OSUDegreePlannerAPI {
         CS450: v4(),
         CS457: v4(),
         CS464: v4(),
-        CS469: v4(),
+        // CS469: v4(), //Structured project, not including in this catalog
         // CS472: v4(), //Removed due to ECE prereqs
         CS473: v4(),
         CS475: v4(),

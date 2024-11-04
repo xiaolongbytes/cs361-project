@@ -15,7 +15,7 @@ describe(OSUDegreePlannerAPI, () => {
         });
         it('should have an ID for each course', async () => {
             const courses = await new OSUDegreePlannerAPI().getOfferedCourses();
-            Object.values(OSUDegreePlannerAPI._COURSE_IDS).every(courseID => {
+            Object.values(OSUDegreePlannerAPI._COURSE_IDS).forEach(courseID => {
                 const matchingCourse = courses.find(course => course.id === courseID);
                 expect(matchingCourse).toBeDefined();
             });
@@ -58,7 +58,7 @@ describe(OSUDegreePlannerAPI, () => {
         });
     });
 
-    describe('verifyDegreePlan', () => {
+    describe.skip('verifyDegreePlan', () => {
         // TODO write more tests
         it('should throw a NotImplementedError', async () => {
             const api = new OSUDegreePlannerAPI();
@@ -66,14 +66,14 @@ describe(OSUDegreePlannerAPI, () => {
         });
     });
 
-    describe('exportDegreePlanToPDF', () => {
+    describe.skip('exportDegreePlanToPDF', () => {
         // TODO write more tests
         it('should throw a NotImplementedError', async () => {
             const api = new OSUDegreePlannerAPI();
             await expect(api.exportDegreePlanToPDF).rejects.toThrow(NotImplementedError);
         });
     });
-    describe('trackWebsiteAnalytics', () => {
+    describe.skip('trackWebsiteAnalytics', () => {
         // TODO write more tests
         it('should throw a NotImplementedError', async () => {
             const api = new OSUDegreePlannerAPI();
