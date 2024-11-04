@@ -1,14 +1,15 @@
 import React, { FunctionComponent } from 'react';
-import { Course, Quarter, UUID } from '../../common/constants';
+import { Course, Quarter, UUID } from '../../../common/constants';
 import './DegreePlan.css';
 import { QuarterCard } from '../QuarterCard/QuarterCard';
+import { CourseSelectorCallback } from '../../hooks/useOSUDegreePlannerState';
 
 type DegreePlanProps = {
     quarters: Quarter[];
     allOfferedCourses: Course[];
     quartersToCourses: Record<UUID, UUID[]>;
     selectedCourse: Course | null;
-    onCourseSelect: (course: Course) => void;
+    onCourseSelect: CourseSelectorCallback;
 };
 
 export const DegreePlan: FunctionComponent<DegreePlanProps> = ({

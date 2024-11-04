@@ -1,21 +1,15 @@
 import React, { FunctionComponent } from 'react';
-import { Quarter, Course, UUID, Season } from '../../common/constants';
+import { Quarter, Course, UUID, SEASON_TO_HUMAN_LEGIBLE_NAME } from '../../../common/constants';
 import './QuarterCard.css';
 import { CourseCard } from '../CourseCard/CourseCard';
+import { CourseSelectorCallback, CourseSelectSource } from '../../hooks/useOSUDegreePlannerState';
 
 type QuarterCardProps = {
     selectedCourse: Course | null;
     quarter: Quarter;
     quartersToCourses: Record<UUID, UUID[]>;
     allOfferedCourses: Course[];
-    onCourseSelect: (course: Course) => void;
-};
-
-const SEASON_TO_HUMAN_LEGIBLE_NAME: Record<Season, string> = {
-    [Season.FALL]: 'Fall',
-    [Season.SPRING]: 'Spring',
-    [Season.SUMMER]: 'Summer',
-    [Season.WINTER]: 'Winter',
+    onCourseSelect: CourseSelectorCallback;
 };
 
 export const QuarterCard: FunctionComponent<QuarterCardProps> = ({
@@ -31,7 +25,7 @@ export const QuarterCard: FunctionComponent<QuarterCardProps> = ({
                 {SEASON_TO_HUMAN_LEGIBLE_NAME[quarter.season]} {quarter.year}
             </p>
             <div className="quartercard__body">
-                {quartersToCourses[quarter.id].map(courseID => {
+                {(quartersToCourses[quarter.id] ?? []).map(courseID => {
                     const course = allOfferedCourses.find(course => course.id === courseID)!;
                     return (
                         <CourseCard
@@ -41,6 +35,7 @@ export const QuarterCard: FunctionComponent<QuarterCardProps> = ({
                             allOfferedCourses={allOfferedCourses}
                             onCourseSelect={onCourseSelect}
                             quartersToCourses={quartersToCourses}
+                            source={CourseSelectSource.DEGREE_PLAN}
                         />
                     );
                 })}

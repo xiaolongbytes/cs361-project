@@ -22,6 +22,7 @@ module.exports = {
         'plugin:import/errors',
         'plugin:jest/recommended',
         'plugin:react/recommended',
+        'plugin:react-hooks/recommended',
         'plugin:prettier/recommended',
         'prettier',
     ],
@@ -34,6 +35,8 @@ module.exports = {
                 caughtErrorsIgnorePattern: '^_',
             },
         ],
+        'react-hooks/exhaustive-deps': ERROR,
+        'react/no-unescaped-entities': OFF,
         'jest/valid-title': OFF,
     },
     settings: {
@@ -41,6 +44,9 @@ module.exports = {
             node: {
                 extensions: ['.js', '.jsx', '.ts', '.tsx'],
             },
+        },
+        react: {
+            version: 'detect',
         },
     },
 };

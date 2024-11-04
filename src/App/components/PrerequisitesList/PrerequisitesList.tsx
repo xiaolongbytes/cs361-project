@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Course, UUID } from '../../common/constants';
+import { Course, UUID } from '../../../common/constants';
 import './PrerequisitesList.css';
 import { NoPrerequisiteBadge } from '../PrerequisiteBadge/NoPrerequisitesBadge';
 import { PrerequisiteBadge } from '../PrerequisiteBadge/PrerequisiteBadge';

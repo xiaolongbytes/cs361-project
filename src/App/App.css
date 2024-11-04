@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, h6, p, span, a {
+* {
   font-family: sans-serif
 }
 
@@ -15,6 +15,7 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     "coursecatalog form quartercatalog";
 }
 
+/* TODO: Stretch Goal - Add media query to support printing degree plan with print button */
 @media screen and (max-width: 1000px) {
   .App {
     grid-template-columns: repeat(2, 1fr);
@@ -24,8 +25,14 @@ h1, h2, h3, h4, h5, h6, p, span, a {
       "coursecatalog quartercatalog";
   }
 }
+
+h1 {
+  font-size: 2em;
+  margin: 0.25em;
+}
 .App__header {
   grid-area: header;
+  text-align: center;
 }
 
 .App__coursecatalog {

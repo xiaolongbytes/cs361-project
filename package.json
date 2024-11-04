@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.116",
@@ -37,8 +35,9 @@
     "build": "react-scripts build",
     "test": "jest --coverage",
     "eject": "react-scripts eject",
-    "lint": "eslint 'src/**/*.ts' 'src/**/*.tsx'"
-
+    "lint": "eslint 'src/**/*.ts' 'src/**/*.tsx'",
+    "typecheck": "tsc --noEmit",
+    "get-courses": "ts-node -P tsconfig.server.json scripts/saveCoursesFromWeb.ts"
   },
   "browserslist": {
     "production": [
@@ -53,6 +52,9 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^15.0.7",
+    "@types/node-fetch": "^2.6.11",
     "@typescript-eslint/eslint-plugin": "^8.12.2",
     "@typescript-eslint/parser": "^8.12.2",
     "eslint": "^8.57.1",
@@ -60,11 +62,15 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jest": "^28.8.3",
     "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "jest": "29.5",
     "jest-environment-jsdom": "^29.7.0",
     "jest-extended": "^4.0.2",
+    "jsdom": "^25.0.1",
+    "node-fetch": "^2.7.0",
     "prettier": "^3.3.3",
     "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.12.2"
   }

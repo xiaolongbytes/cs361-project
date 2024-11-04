@@ -1,5 +1,5 @@
 import React from 'react';
-import { Course, Season } from '../../../common/constants';
+import { Course, Season } from '../../../../common/constants';
 import { render } from '@testing-library/react';
 import { PrerequisitesList } from '../PrerequisitesList';
 import { PrerequisiteBadgeStateClass } from '../../PrerequisiteBadge/PrerequisiteBadge';

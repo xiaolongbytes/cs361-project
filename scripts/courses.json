@@ -1,0 +1,424 @@
+[
+  {
+    "courseCode": "CS 101",
+    "fullName": "Computers: Applications and Implications",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 161",
+    "fullName": "Introduction to Computer Science I",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 162",
+    "fullName": "Introduction to Computer Science II",
+    "prerequisites": [
+      "CS 161"
+    ]
+  },
+  {
+    "courseCode": "CS 162H",
+    "fullName": "Introduction to Computer Science II",
+    "prerequisites": [
+      "CS 161"
+    ]
+  },
+  {
+    "courseCode": "CS 175",
+    "fullName": "Communications Security and Social Movements",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 201",
+    "fullName": "Computer Programming for Non-cs Majors",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 225",
+    "fullName": "Discrete Structures in Computer Science",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 261",
+    "fullName": "Data Structures",
+    "prerequisites": [
+      "(CS 162",
+      "CS 162H",
+      "CS 165 )",
+      "(CS 225"
+    ]
+  },
+  {
+    "courseCode": "CS 271",
+    "fullName": "Computer Architecture and Assembly Language",
+    "prerequisites": [
+      "CS 151",
+      "CS 161",
+      "CS 165"
+    ]
+  },
+  {
+    "courseCode": "CS 290",
+    "fullName": "Web Development",
+    "prerequisites": [
+      "CS 162",
+      "CS 162H",
+      "CS 165"
+    ]
+  },
+  {
+    "courseCode": "CS 321",
+    "fullName": "Introduction to Theory of Computation",
+    "prerequisites": [
+      "CS 261",
+      "(CS 225"
+    ]
+  },
+  {
+    "courseCode": "CS 325",
+    "fullName": "Analysis of Algorithms",
+    "prerequisites": [
+      "CS 261",
+      "(CS 225"
+    ]
+  },
+  {
+    "courseCode": "CS 332",
+    "fullName": "Intro to Applied Data Science With Programming",
+    "prerequisites": [
+      "CS 261"
+    ]
+  },
+  {
+    "courseCode": "CS 340",
+    "fullName": "Introduction to Databases",
+    "prerequisites": [
+      "CS 290"
+    ]
+  },
+  {
+    "courseCode": "CS 352",
+    "fullName": "Introduction to Usability Engineering",
+    "prerequisites": [
+      "CS 151",
+      "CS 161",
+      "CS 165",
+      "CS 295"
+    ]
+  },
+  {
+    "courseCode": "CS 361",
+    "fullName": "Software Engineering I",
+    "prerequisites": [
+      "CS 261"
+    ]
+  },
+  {
+    "courseCode": "CS 362",
+    "fullName": "Software Engineering II",
+    "prerequisites": [
+      "CS 261"
+    ]
+  },
+  {
+    "courseCode": "CS 362H",
+    "fullName": "Software Engineering II",
+    "prerequisites": [
+      "CS 261"
+    ]
+  },
+  {
+    "courseCode": "CS 370",
+    "fullName": "Introduction to Security",
+    "prerequisites": [
+      "CS 344",
+      "CS 374"
+    ]
+  },
+  {
+    "courseCode": "CS 372",
+    "fullName": "Introduction to Computer Networks",
+    "prerequisites": [
+      "CS 261",
+      "CS 271 )"
+    ]
+  },
+  {
+    "courseCode": "CS 373",
+    "fullName": "Defense Against the Dark Arts",
+    "prerequisites": [
+      "CS 340",
+      "(CS 344",
+      "CS 374 )",
+      "(CS 372"
+    ]
+  },
+  {
+    "courseCode": "CS 374",
+    "fullName": "Operating Systems I",
+    "prerequisites": [
+      "CS 261",
+      "(CS 271"
+    ]
+  },
+  {
+    "courseCode": "CS 381",
+    "fullName": "Programming Language Fundamentals",
+    "prerequisites": [
+      "CS 261",
+      "(CS 225"
+    ]
+  },
+  {
+    "courseCode": "CS 391",
+    "fullName": "Social and Ethical Issues in Computer Science",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 403",
+    "fullName": "Thesis",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 406",
+    "fullName": "Projects",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 427",
+    "fullName": "Cryptography",
+    "prerequisites": [
+      "CS 261"
+    ]
+  },
+  {
+    "courseCode": "CS 444",
+    "fullName": "Operating Systems II",
+    "prerequisites": [
+      "(CS 344",
+      "CS 374 )",
+      "(CS 271"
+    ]
+  },
+  {
+    "courseCode": "CS 450",
+    "fullName": "Introduction to Computer Graphics",
+    "prerequisites": [
+      "CS 261"
+    ]
+  },
+  {
+    "courseCode": "CS 457",
+    "fullName": "Computer Graphics Shaders",
+    "prerequisites": [
+      "CS 261"
+    ]
+  },
+  {
+    "courseCode": "CS 461",
+    "fullName": "Senior Software Engineering Project I",
+    "prerequisites": [
+      "(CS 325",
+      "CS 325H )",
+      "CS 361",
+      "(CS 362",
+      "CS 362H )"
+    ]
+  },
+  {
+    "courseCode": "CS 462",
+    "fullName": "Senior Software Engineering Project II",
+    "prerequisites": [
+      "(CS 362",
+      "CS 362H )",
+      "CS 461"
+    ]
+  },
+  {
+    "courseCode": "CS 463",
+    "fullName": "Senior Software Engineering Project",
+    "prerequisites": [
+      "CS 462"
+    ]
+  },
+  {
+    "courseCode": "CS 464",
+    "fullName": "Open Source Software",
+    "prerequisites": [
+      "CS 261",
+      "CS 361",
+      "CS 361",
+      "CS 362"
+    ]
+  },
+  {
+    "courseCode": "CS 467",
+    "fullName": "Online Capstone Project",
+    "prerequisites": [
+      "CS 361",
+      "(CS 362",
+      "CS 362H )",
+      "(CS 344",
+      "CS 374 )"
+    ]
+  },
+  {
+    "courseCode": "CS 469",
+    "fullName": "Structured Project",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 472",
+    "fullName": "Computer Architecture",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 473",
+    "fullName": "Introduction to Digital Forensics",
+    "prerequisites": [
+      "( (CS 344",
+      "CS 374 )",
+      "CS 370 )"
+    ]
+  },
+  {
+    "courseCode": "CS 474",
+    "fullName": "Operating Systems II",
+    "prerequisites": [
+      "(CS 344",
+      "CS 374 )",
+      "(CS 271"
+    ]
+  },
+  {
+    "courseCode": "CS 475",
+    "fullName": "Introduction to Parallel Programming",
+    "prerequisites": [
+      "CS 261"
+    ]
+  },
+  {
+    "courseCode": "CS 478",
+    "fullName": "Network Security",
+    "prerequisites": [
+      "CS 372"
+    ]
+  },
+  {
+    "courseCode": "CS 492",
+    "fullName": "Mobile Software Development",
+    "prerequisites": [
+      "CS 344",
+      "CS 374"
+    ]
+  },
+  {
+    "courseCode": "CS 493",
+    "fullName": "Cloud Application Development",
+    "prerequisites": [
+      "CS 290",
+      "CS 340",
+      "CS 372"
+    ]
+  },
+  {
+    "courseCode": "CS 499",
+    "fullName": "Special Topics",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 501",
+    "fullName": "Research",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 503",
+    "fullName": "Computer Science Ms Thesis",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 510",
+    "fullName": "Occupational Internship",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 511",
+    "fullName": "Programming and Data Structures",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 512",
+    "fullName": "Data Science Tools and Programming",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 513",
+    "fullName": "Applied Machine Learning",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 514",
+    "fullName": "Algorithms: Design, Analysis, and Implementation",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 520",
+    "fullName": "Graph Theory With Applications to Computer Science",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 529",
+    "fullName": "Selected Topics in Theoretical Computer Science",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 540",
+    "fullName": "Database Management Systems",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 550",
+    "fullName": "Introduction to Computer Graphics",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 557",
+    "fullName": "Computer Graphics Shaders",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 565",
+    "fullName": "Human-computer Interaction",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 572",
+    "fullName": "Computer Architecture",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 573",
+    "fullName": "Introduction to Digital Forensics",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 575",
+    "fullName": "Introduction to Parallel Programming",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 576",
+    "fullName": "Advanced Computer Networking",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 579",
+    "fullName": "Topics in Computer Architecture and Parallel Processing",
+    "prerequisites": []
+  },
+  {
+    "courseCode": "CS 581",
+    "fullName": "Programming Languages I",
+    "prerequisites": []
+  }
+]

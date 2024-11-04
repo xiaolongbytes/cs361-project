@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from 'react';
-import { Course, UUID } from '../../common/constants';
+import { Course, UUID } from '../../../common/constants';
 import { PrerequisitesList } from '../PrerequisitesList/PrerequisitesList';
 import { SeasonBadge } from '../SeasonBadge/SeasonBadge';
+import { CourseSelectorCallback, CourseSelectSource } from '../../hooks/useOSUDegreePlannerState';
 import './CourseCard.css';
 
 type CourseCardProps = {
@@ -11,8 +12,9 @@ type CourseCardProps = {
     /**
      * Callback for when a course is selected
      */
-    onCourseSelect: (course: Course) => void;
+    onCourseSelect: CourseSelectorCallback;
     quartersToCourses: Record<UUID, UUID[]>;
+    source: CourseSelectSource;
 };
 
 export const CourseCard: FunctionComponent<CourseCardProps> = ({
@@ -21,10 +23,11 @@ export const CourseCard: FunctionComponent<CourseCardProps> = ({
     allOfferedCourses,
     quartersToCourses,
     onCourseSelect,
+    source,
 }) => {
     return (
         <div
-            onClick={() => onCourseSelect(course)}
+            onClick={() => onCourseSelect(course, source)}
             className={`coursecard ${isSelected ? 'coursecard--selected' : ''}`}>
             <div className="coursecard__header">
                 <p>

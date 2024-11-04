@@ -1,4 +1,4 @@
-import { Season } from '../../common/constants';
+import { Season } from '../../../common/constants';
 import './SeasonBadge.css';
 import React, { FunctionComponent } from 'react';
 type SeasonBadgeProps = { season: Season };

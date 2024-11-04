@@ -1,13 +1,14 @@
 import React, { FunctionComponent } from 'react';
-import { Course, UUID } from '../../common/constants';
+import { Course, UUID } from '../../../common/constants';
 import { CourseCard } from '../CourseCard/CourseCard';
+import { CourseSelectorCallback, CourseSelectSource } from '../../hooks/useOSUDegreePlannerState';
 import './CourseCatalog.css';
 
 type CourseCatalogProps = {
     allOfferedCourses: Course[];
     selectedCourse: Course | null;
     courses: Course[];
-    onCourseSelect: (course: Course) => void;
+    onCourseSelect: CourseSelectorCallback;
     quartersToCourses: Record<UUID, UUID[]>;
 };
 
@@ -18,6 +19,10 @@ export const CourseCatalog: FunctionComponent<CourseCatalogProps> = ({
     onCourseSelect,
     quartersToCourses,
 }) => {
+    // Note, probably should hoist the filtering up to the stateful component
+    // TODO: Stretch goal - add filtering by prereqs fulfilled
+    // TODO: Stretch goal - add filtering by text search
+    // TODO: Stretch goal - add filtering by season offered
     return (
         <div className="coursecatalog">
             <p className="coursecatalog__header">Course Catalog</p>
@@ -30,6 +35,7 @@ export const CourseCatalog: FunctionComponent<CourseCatalogProps> = ({
                         onCourseSelect={onCourseSelect}
                         quartersToCourses={quartersToCourses}
                         key={course.id}
+                        source={CourseSelectSource.COURSE_CATALOG}
                     />
                 ))}
             </div>
