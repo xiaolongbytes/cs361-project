@@ -1,5 +1,6 @@
 {
   "name": "my-osu-planner",
+  "homepage": "/cs361-project",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
