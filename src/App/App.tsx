@@ -29,7 +29,7 @@ const App: FunctionComponent = () => {
         <div className="App">
             <div className="App__header">
                 <h1>MyOSUDegreePlan</h1>
-                <p>Checks prerequisites and course availability that MyDegree Plan can’t!</p>
+                <p>Shows prerequisites and course quarter availability that MyDegree Plan can’t!</p>
             </div>
             <div className="App__coursecatalog">
                 <CourseCatalog
