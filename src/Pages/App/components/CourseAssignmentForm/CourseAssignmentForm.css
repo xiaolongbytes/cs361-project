@@ -1,0 +1,58 @@
+.courseassignmentform__header {
+    font-weight: bold;
+    font-size: large;
+}
+
+.courseassignmentform {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 1em;
+    height: 80vh;
+}
+
+.courseassignmentform__button {
+    font-size: 1em;
+    transition: background-color 0.3s ease-out;
+    padding: 1em;
+    border: 0;
+}
+
+
+.courseassignmentform__button--danger {
+    display: inline-block;
+    padding: 1em;
+    background-color: rgb(205, 64, 64);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease-out;
+}
+.courseassignmentform__button--danger:hover {
+    color: white;
+    text-decoration: none;
+    background-color: rgb(155, 5, 5);
+}
+.courseassignmentform__button--danger:visited {
+    color: white;
+}
+
+details summary {
+    font-weight: bold;
+}
+
+details ol {
+    padding-left: 1.5em;
+}
+
+details p {
+    font-weight: bold;
+    padding: 0.5em;
+}
+
+button {
+    padding: 1em;
+}
+

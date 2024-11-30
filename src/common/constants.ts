@@ -5,6 +5,21 @@ export enum Season {
     SUMMER = 'SUMMER',
 }
 
+export enum ServerSeason {
+    FALL = 3,
+    WINTER = 0,
+    SPRING = 1,
+    SUMMER = 2,
+}
+/**
+ * Maps Season enum to the season values used by the server
+ */
+export const SEASON_TO_SERVER_SEASON: Record<Season, ServerSeason> = {
+    [Season.FALL]: ServerSeason.FALL,
+    [Season.WINTER]: ServerSeason.WINTER,
+    [Season.SPRING]: ServerSeason.SPRING,
+    [Season.SUMMER]: ServerSeason.SUMMER,
+};
 export const SEASON_TO_HUMAN_LEGIBLE_NAME: Record<Season, string> = {
     [Season.FALL]: 'Fall',
     [Season.SPRING]: 'Spring',
@@ -13,6 +28,11 @@ export const SEASON_TO_HUMAN_LEGIBLE_NAME: Record<Season, string> = {
 };
 
 export type UUID = string;
+
+export enum ROUTES {
+    HOME = '/',
+    QUARTER_CREATION = '/quarters',
+}
 
 export type Course = {
     id: UUID;
