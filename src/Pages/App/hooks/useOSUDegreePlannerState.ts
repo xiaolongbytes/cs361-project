@@ -21,8 +21,15 @@ export const useOSUDegreePlannerState = ({ apiClient }: { apiClient: OSUDegreePl
     const [quarters, setQuarters] = useState<Quarter[]>([]);
     const navigate = useNavigate();
 
-    const { fetchAllCourses, loadQuarters, createQuartersForDegreePlan, exportDegreePlanToPDF, verifyDegreePlan } =
-        useOSUDegreePlannerAPI({ apiClient });
+    const {
+        fetchAllCourses,
+        loadQuarters,
+        createQuartersForDegreePlan,
+        exportDegreePlanToPDF,
+        verifyDegreePlan,
+        saveDegreePlan,
+        loadDegreePlan,
+    } = useOSUDegreePlannerAPI({ apiClient });
 
     useEffect(() => {
         const loadData = async () => {
@@ -59,6 +66,18 @@ export const useOSUDegreePlannerState = ({ apiClient }: { apiClient: OSUDegreePl
         });
         setSelectedCourseFromCatalog(null);
     }, [degreePlan, selectedCourseFromCatalog, selectedQuarter]);
+
+    const onSaveDegreePlan = useCallback(async () => {
+        await saveDegreePlan({ degreePlan, quarters });
+    }, [saveDegreePlan, degreePlan, quarters]);
+
+    const onLoadDegreePlan = useCallback(async () => {
+        const result = await loadDegreePlan();
+        if (result.isSuccess) {
+            setQuarters(result.quarters);
+            setDegreePlan(result.degreePlan);
+        }
+    }, [loadDegreePlan]);
 
     const onExportToPDF = useCallback(async () => {
         const result = await exportDegreePlanToPDF({ degreePlan, quarters, courses: allOfferedCourses });
@@ -130,5 +149,7 @@ export const useOSUDegreePlannerState = ({ apiClient }: { apiClient: OSUDegreePl
         onDegreeReset,
         onQuarterSelect,
         onValidateDegreePlan,
+        onSaveDegreePlan,
+        onLoadDegreePlan,
     };
 };

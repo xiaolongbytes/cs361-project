@@ -26,6 +26,8 @@ const App: FunctionComponent = () => {
         onQuarterSelect,
         onExportToPDF,
         onValidateDegreePlan,
+        onSaveDegreePlan,
+        onLoadDegreePlan,
     } = useOSUDegreePlannerState({ apiClient });
     return (
         <div className="App">
@@ -54,6 +56,8 @@ const App: FunctionComponent = () => {
                     onDegreeReset={onDegreeReset}
                     onExportToPDF={onExportToPDF}
                     onValidateDegreePlan={onValidateDegreePlan}
+                    onSaveDegreePlan={onSaveDegreePlan}
+                    onLoadDegreePlan={onLoadDegreePlan}
                 />
             </div>
             <div className="App__quartercatalog">

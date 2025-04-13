@@ -38,6 +38,7 @@ export const useOSUDegreePlannerAPI = ({ apiClient }: { apiClient: OSUDegreePlan
         },
         [apiClient]
     );
+
     const exportDegreePlanToPDF = useCallback(
         async (...args: Parameters<typeof apiClient.exportDegreePlanToPDF>) => {
             return apiClient.exportDegreePlanToPDF(...args);
@@ -45,12 +46,36 @@ export const useOSUDegreePlannerAPI = ({ apiClient }: { apiClient: OSUDegreePlan
         [apiClient]
     );
 
+    const saveDegreePlan = useCallback(
+        async (...args: Parameters<typeof apiClient.saveDegreePlan>) => {
+            const data = await apiClient.saveDegreePlan(...args);
+            if (!data.isSuccess) {
+                alert(data.error);
+                return data;
+            }
+            alert(data.message);
+            return data;
+        },
+        [apiClient]
+    );
+
+    const loadDegreePlan = useCallback(async () => {
+        const data = await apiClient.loadDegreePlan();
+        if (!data.isSuccess) {
+            alert(data.error);
+            return data;
+        }
+        alert('Degree plan successfully loaded');
+        return data;
+    }, [apiClient]);
+
     return {
         fetchAllCourses,
         loadQuarters,
         verifyDegreePlan,
         createQuartersForDegreePlan,
         exportDegreePlanToPDF,
-        // trackWebsiteAnalytics,
+        saveDegreePlan,
+        loadDegreePlan,
     };
 };

@@ -435,6 +435,70 @@ export class OSUDegreePlannerAPI {
         }
     }
 
+    public async saveDegreePlan({
+        degreePlan,
+        quarters,
+    }: {
+        degreePlan: Record<UUID, UUID[]>;
+        quarters: Quarter[];
+    }): Promise<
+        | {
+              isSuccess: true;
+              message: string;
+              error?: never;
+          }
+        | {
+              isSuccess: false;
+              message?: never;
+              error: string;
+          }
+    > {
+        try {
+            const response = await fetch('http://127.0.0.1:5000/save-degree-plan', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ degreePlan, quarters }),
+            });
+
+            const { message } = await response.json();
+            return { isSuccess: true, message };
+        } catch (error) {
+            return {
+                isSuccess: false,
+                error: (error as Error).message,
+            };
+        }
+    }
+
+    public async loadDegreePlan(): Promise<
+        | {
+              isSuccess: true;
+              quarters: Quarter[];
+              degreePlan: Record<UUID, UUID[]>;
+              error?: never;
+          }
+        | {
+              isSuccess: false;
+              quarters?: never;
+              degreePlan?: never;
+              error: string;
+          }
+    > {
+        try {
+            const response = await fetch('http://127.0.0.1:5000/load-degree-plan');
+
+            const data = await response.json();
+            return { isSuccess: true, quarters: data.quarters, degreePlan: data.degreePlan };
+        } catch (error) {
+            return {
+                isSuccess: false,
+                error: (error as Error).message,
+            };
+        }
+    }
+
     public async exportDegreePlanToPDF({
         degreePlan,
         quarters,
@@ -515,10 +579,4 @@ export class OSUDegreePlannerAPI {
             };
         }
     }
-
-    // // TODO define a better type for the analytics
-    // public async trackWebsiteAnalytics(_analytic: Record<string, string>): Promise<void> {
-    //     // TODO Future Sprint Work
-    //     throw new NotImplementedError();
-    // }
 }

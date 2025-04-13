@@ -40,4 +40,19 @@ def validate_degree_plan():
     return jsonify(response.json())
 
 # Connecting to Microservice D - Import/export plans
+@app.route('/save-degree-plan', methods=['POST'])
+def save_degree_plan():
+    url = 'http://127.0.0.1:5004/save_degree_plan'
+    payload = request.get_json()
 
+    response = requests.post(url, json=payload)
+
+    return jsonify(response.json())
+
+@app.route('/load-degree-plan', methods=['GET'])
+def load_degree_plan():
+    url = 'http://127.0.0.1:5004/load_degree_plan'
+    response = requests.get(url)
+    print(response)
+
+    return jsonify(response.json())

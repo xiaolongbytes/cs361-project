@@ -16,6 +16,8 @@ type CourseAssignmentFormProps = {
     onDegreeReset: () => void;
     onExportToPDF: () => void;
     onValidateDegreePlan: () => void;
+    onSaveDegreePlan: () => void;
+    onLoadDegreePlan: () => void;
 };
 
 export const CourseAssignmentForm: FunctionComponent<CourseAssignmentFormProps> = ({
@@ -29,6 +31,8 @@ export const CourseAssignmentForm: FunctionComponent<CourseAssignmentFormProps> 
     onDegreeReset,
     onExportToPDF,
     onValidateDegreePlan,
+    onSaveDegreePlan,
+    onLoadDegreePlan,
 }) => {
     return (
         <form className="courseassignmentform">
@@ -79,11 +83,13 @@ export const CourseAssignmentForm: FunctionComponent<CourseAssignmentFormProps> 
                 PRINT PLAN AS PDF
             </button>
 
-            {/* TODO: Import */}
-            <button className="courseassignmentform__button">Import Degree Plan from File</button>
+            <button type="button" className="courseassignmentform__button" onClick={onSaveDegreePlan}>
+                Save Degree Plan
+            </button>
 
-            {/* TODO: Export */}
-            <button className="courseassignmentform__button">Export Degree Plan</button>
+            <button type="button" className="courseassignmentform__button" onClick={onLoadDegreePlan}>
+                Load Degree Plan
+            </button>
 
             <NavLink className="courseassignmentform__button courseassignmentform__button--danger" to="/quarters">
                 Restart from Quarter Creation
