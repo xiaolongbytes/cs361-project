@@ -1,3 +1,6 @@
+# Please see [feat/microservice-integration branch](https://github.com/xiaolongbytes/cs361-project/tree/feat/microservices-integration) for most recent updates
+Branch has not been merged so as not to break the github page.
+
 # Problem
 - Current MyDegree Plan tool offered by Oregon State University does not provide information about or check prerequisites or what quarters courses are offered and only displays course code (with no human legible course name) and credit hours. 
 ![image](https://github.com/user-attachments/assets/f06aa548-f5ad-4744-b587-637ecdc9efe4)
